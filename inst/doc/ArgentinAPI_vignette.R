@@ -18,6 +18,21 @@ argentine_senators <- head(get_argentine_senators(),n=10)
 print(argentine_senators)
 
 
+## ----argentina-gdp,echo = TRUE,message = FALSE,warning = FALSE,results = 'markup'----
+
+
+argentina_gdp <- head(get_argentina_gdp())
+
+print(argentina_gdp)
+
+
+## ----argentina-life-expectancy,echo = TRUE,message = FALSE,warning = FALSE,results = 'markup'----
+
+argentina_life_expectancy <- head(get_argentina_life_expectancy())
+
+print(argentina_life_expectancy)
+
+
 ## ----corn-yield-plot, message=FALSE, warning=FALSE, fig.width=7, fig.height=5----
 
 # Summary: average corn yield by nitrogen level

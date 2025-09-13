@@ -12,7 +12,7 @@
 
 
 
-<title>ArgentinAPI: Access Argentine Economic, Social, and Geopolitical Data via RESTful APIs and Curated Datasets</title>
+<title>ArgentinAPI: Access Argentinian Data via APIs and Curated Datasets</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -336,8 +336,8 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 
 
-<h1 class="title toc-ignore">ArgentinAPI: Access Argentine Economic,
-Social, and Geopolitical Data via RESTful APIs and Curated Datasets</h1>
+<h1 class="title toc-ignore">ArgentinAPI: Access Argentinian Data via
+APIs and Curated Datasets</h1>
 
 
 
@@ -354,26 +354,28 @@ Social, and Geopolitical Data via RESTful APIs and Curated Datasets</h1>
 <span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
-<p>The <code>ArgentinAPI</code> package provides a unified interface to
-access open data from the <strong>ArgentinaDatos</strong> API and the
-<strong>REST Countries API</strong>, with a focus on
-<strong>Argentina</strong>. It allows users to easily retrieve
-up-to-date information on exchange rates, inflation, political figures,
-national holidays, and country-level indicators relevant to
-<strong>Argentina</strong>.</p>
+<p>The <code>ArgentinAPI</code> package provides a comprehensive and
+unified interface to access open data about <strong>Argentina</strong>
+from multiple public RESTful APIs, including <strong>ArgentinaDatos
+API</strong>, <strong>REST Countries API</strong>, and <strong>World
+Bank API</strong>. Through these sources, users can easily retrieve
+information on exchange rates, inflation, political figures, national
+holidays, economic indicators, and general country-level statistics.</p>
 <p>In addition to API-access functions, the package includes a
-collection of curated datasets related to <strong>Argentina</strong>,
-covering diverse domains such as economic indicators, biodiversity,
-agriculture, human rights, genetics, and consumer prices.</p>
-<p><code>ArgentinAPI</code> is designed to support research, teaching,
-and data analysis focused on Argentina by integrating publicly available
-APIs and high-quality datasets into a single, easy-to-use R package.</p>
+collection of curated datasets covering diverse domains such as economic
+indicators, biodiversity, agriculture, human rights, genetic data, and
+consumer prices.</p>
+<p>By integrating open APIs with high-quality datasets from multiple
+domains, <code>ArgentinAPI</code> supports research, teaching, and
+analysis focused on <strong>Argentina</strong>, making it a versatile
+tool for academics, professionals, and policymakers.</p>
 <div id="functions-for-argentinapi" class="section level2">
 <h2>Functions for ArgentinAPI</h2>
 <p>The <code>ArgentinAPI</code> package provides several core functions
-to access real-time and structured information about Argentina from
-public APIs such as <a href="https://argentinadatos.com/">ArgentinaDatos</a> and <a href="https://restcountries.com/">REST Countries</a>. Below is a list of
-the main functions included in the package:</p>
+to access real-time and structured information about
+<strong>Argentina</strong> from public APIs such as <a href="https://argentinadatos.com/">ArgentinaDatos</a>, <a href="https://restcountries.com/">REST Countries</a>, and the <a href="https://datahelpdesk.worldbank.org/knowledgebase/articles/889392">World
+Bank API</a>.</p>
+<p>Below is a list of the main functions included in the package:</p>
 <ul>
 <li><p><code>get_argentina_holidays()</code> – Retrieves public holidays
 in Argentina for a specific year using the ArgentinaDatos API.</p></li>
@@ -381,25 +383,39 @@ in Argentina for a specific year using the ArgentinaDatos API.</p></li>
 of Argentine senators from the ArgentinaDatos API.</p></li>
 <li><p><code>get_argentine_deputies()</code> – Returns the current list
 of Argentine deputies from the ArgentinaDatos API.</p></li>
-<li><p><code>get_country_info()</code> – Retrieves general country-level
-information about Argentina from the REST Countries API (e.g.,
-population, area, time zones, etc.).</p></li>
+<li><p><code>get_country_info_ar()</code> – Retrieves general
+country-level information about Argentina from the REST Countries
+API</p></li>
 <li><p><code>get_dollar_exchange_rates()</code> – Retrieves the most
 recent exchange rates for different dollar markets (official, blue, MEP,
 CCL) from the ArgentinaDatos API.</p></li>
 <li><p><code>get_presidential_events()</code> – Retrieves a list of
 official presidential events from the ArgentinaDatos API.</p></li>
+<li><p><code>get_argentina_child_mortality()</code>: Get Argentina’s
+Under-5 Mortality Rate data from the World Bank.</p></li>
+<li><p><code>get_argentina_energy_use()</code>: Get Argentina’s Energy
+Use (kg of oil equivalent per capita) data from the World Bank.</p></li>
+<li><p><code>get_argentina_gdp()</code>: Get Argentina’s GDP (current
+US$) data from the World Bank.</p></li>
+<li><p><code>get_argentina_hospital_beds()</code>: Get Argentina’s
+Hospital Beds (per 1,000 people) data from the World Bank.</p></li>
+<li><p><code>get_argentina_life_expectancy()</code>: Get Argentina’s
+Life Expectancy at Birth data from the World Bank.</p></li>
+<li><p><code>get_argentina_population()</code>: Get Argentina’s Total
+Population data from the World Bank.</p></li>
+<li><p><code>get_argentina_unemployment()</code>: Get Argentina’s Total
+Unemployment Rate data from the World Bank.</p></li>
 <li><p><code>view_datasets_ArgentinAPI()</code> – Lists all curated
 datasets included in the <code>ArgentinAPI</code> package across various
 thematic areas such as economy, biodiversity, genetics, agriculture, and
 more.</p></li>
 </ul>
 <p>These functions allow users to access high-quality and structured
-information on Argentina, which can be combined with tools like
-<code>dplyr</code>, <code>tidyr</code>, and <code>ggplot2</code> to
-support a wide range of data analysis and visualization tasks. In the
-following sections, you’ll find examples on how to work with
-<code>ArgentinAPI</code> in practical scenarios.</p>
+information on <strong>Argentina</strong>, which can be combined with
+tools like <code>dplyr</code>, <code>tidyr</code>, and
+<code>ggplot2</code> to support a wide range of data analysis and
+visualization tasks. In the following sections, you’ll find examples on
+how to work with <code>ArgentinAPI</code> in practical scenarios.</p>
 <div id="list-of-argentine-senators" class="section level3">
 <h3>List of Argentine Senators</h3>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a></span>
@@ -422,27 +438,61 @@ following sections, you’ll find examples on how to work with
 <span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="co">#&gt;  9 561   Uñac, Sergio Mauricio         San Juan   Alianza… 2023-12-10 2029-12-09</span></span>
 <span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a><span class="co">#&gt; 10 563   Olivera Lucero, Bruno Antonio San Juan   Alianza… 2023-12-10 2029-12-09</span></span></code></pre></div>
 </div>
+<div id="argentinas-gdp-current-us-from-world-bank-2022---2017" class="section level3">
+<h3>Argentina’s GDP (Current US$) from World Bank 2022 - 2017</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>argentina_gdp <span class="ot">&lt;-</span> <span class="fu">head</span>(<span class="fu">get_argentina_gdp</span>())</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="fu">print</span>(argentina_gdp)</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt; # A tibble: 6 × 5</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt;   indicator         country    year         value value_label    </span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;             &lt;chr&gt;     &lt;int&gt;         &lt;dbl&gt; &lt;chr&gt;          </span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt; 1 GDP (current US$) Argentina  2022 632790070063. 632,790,070,063</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt; 2 GDP (current US$) Argentina  2021 486564085480. 486,564,085,480</span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">#&gt; 3 GDP (current US$) Argentina  2020 385740508437. 385,740,508,437</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co">#&gt; 4 GDP (current US$) Argentina  2019 447754683615. 447,754,683,615</span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="co">#&gt; 5 GDP (current US$) Argentina  2018 524819892360. 524,819,892,360</span></span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co">#&gt; 6 GDP (current US$) Argentina  2017 643628393281. 643,628,393,281</span></span></code></pre></div>
+</div>
+<div id="argentinas-life-expectancy-at-birth-from-world-bank-2022---2017" class="section level3">
+<h3>Argentina’s Life Expectancy at Birth from World Bank 2022 -
+2017</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>argentina_life_expectancy <span class="ot">&lt;-</span> <span class="fu">head</span>(<span class="fu">get_argentina_life_expectancy</span>())</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="fu">print</span>(argentina_life_expectancy)</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt; # A tibble: 6 × 4</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt;   indicator                               country    year value</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;                                   &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt;</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt; 1 Life expectancy at birth, total (years) Argentina  2022  75.8</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt; 2 Life expectancy at birth, total (years) Argentina  2021  73.9</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt; 3 Life expectancy at birth, total (years) Argentina  2020  75.9</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt; 4 Life expectancy at birth, total (years) Argentina  2019  76.8</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt; 5 Life expectancy at birth, total (years) Argentina  2018  76.8</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt; 6 Life expectancy at birth, total (years) Argentina  2017  76.5</span></span></code></pre></div>
+</div>
 <div id="corn-yield-response-to-nitrogen-levels" class="section level3">
 <h3>Corn Yield Response to Nitrogen Levels</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co"># Summary: average corn yield by nitrogen level</span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>corn_summary <span class="ot">&lt;-</span> corn_nitrogen_df <span class="sc">%&gt;%</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>  <span class="fu">group_by</span>(nitro) <span class="sc">%&gt;%</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>    <span class="at">mean_yield =</span> <span class="fu">mean</span>(yield, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>  )</span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co"># Plot: nitrogen vs. average corn yield</span></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="fu">ggplot</span>(corn_summary, <span class="fu">aes</span>(<span class="at">x =</span> nitro, <span class="at">y =</span> mean_yield)) <span class="sc">+</span></span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">&quot;#1f77b4&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">color =</span> <span class="st">&quot;#1f77b4&quot;</span>) <span class="sc">+</span></span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Corn Yield by Nitrogen Level&quot;</span>,</span>
-<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Nitrogen Level (kg/ha)&quot;</span>,</span>
-<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Average Yield (quintals/ha)&quot;</span></span>
-<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co"># Summary: average corn yield by nitrogen level</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>corn_summary <span class="ot">&lt;-</span> corn_nitrogen_df <span class="sc">%&gt;%</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>  <span class="fu">group_by</span>(nitro) <span class="sc">%&gt;%</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>    <span class="at">mean_yield =</span> <span class="fu">mean</span>(yield, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>  )</span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="co"># Plot: nitrogen vs. average corn yield</span></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="fu">ggplot</span>(corn_summary, <span class="fu">aes</span>(<span class="at">x =</span> nitro, <span class="at">y =</span> mean_yield)) <span class="sc">+</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">&quot;#1f77b4&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">color =</span> <span class="st">&quot;#1f77b4&quot;</span>) <span class="sc">+</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Corn Yield by Nitrogen Level&quot;</span>,</span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Nitrogen Level (kg/ha)&quot;</span>,</span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Average Yield (quintals/ha)&quot;</span></span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
 <p><img role="img" src="data:image/png;base64,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" /><!-- --></p>
 </div>
 </div>
@@ -477,12 +527,19 @@ Argentina.</p></li>
 </div>
 <div id="conclusion" class="section level2">
 <h2>Conclusion</h2>
-<p>The <code>ArgentinAPI</code> package provides a powerful suite of
-tools to access public data from Argentina through curated datasets and
-API connectors. Whether analyzing economic trends, exploring
-georeferenced crop productivity, or studying population genetics, this
-package enables rich, reproducible analysis rooted in official and
-scientifically valuable data.</p>
+<p>The <strong><code>ArgentinAPI</code></strong> package brings together
+<strong>public RESTful APIs</strong>—including <a href="https://argentinadatos.com/">ArgentinaDatos</a>, <a href="https://restcountries.com/">REST Countries</a>, and the <a href="https://datahelpdesk.worldbank.org/knowledgebase/articles/889392">World
+Bank API</a>—with a collection of <strong>curated datasets</strong>
+covering domains such as economic indicators, biodiversity, agriculture,
+human rights, genetic data, and consumer prices.</p>
+<p>By integrating these diverse sources, the package enables
+<strong>comprehensive, reproducible, and high-quality research and
+analysis</strong> focused on Argentina. Whether the goal is to study
+<strong>macroeconomic trends</strong>, evaluate <strong>environmental
+and agricultural data</strong>, or explore <strong>social and genetic
+indicators</strong>, <code>ArgentinAPI</code> provides a
+<strong>versatile and reliable toolkit</strong> for researchers,
+educators, policymakers, and data enthusiasts.</p>
 <div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;">
 
 </div>
